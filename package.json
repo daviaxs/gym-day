@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "cd ./apps/front-end && npm run dev"
   },
   "keywords": [],
   "author": "",

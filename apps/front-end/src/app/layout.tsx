@@ -1,3 +1,4 @@
+import StyledComponentsRegistry from '@/lib/registry'
 import { roboto } from '@/shared/theme/fonts'
 import type { Metadata } from 'next'
 import './Global.css'
@@ -14,7 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={roboto.className}>{children}</body>
+      <body className={roboto.className}>
+        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+      </body>
     </html>
   )
 }

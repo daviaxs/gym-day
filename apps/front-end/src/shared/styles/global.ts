@@ -1,7 +1,7 @@
 'use client'
 
-import { createGlobalStyle } from "styled-components";
-import { themeColors } from "./theme/palette";
+import { createGlobalStyle } from 'styled-components'
+import { themeColors } from './theme/palette'
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: ${themeColors["blue-dark-900"]};
+    background-color: ${themeColors['blue-dark-900']};
     color: ${themeColors['grey-50']};
   }
 `

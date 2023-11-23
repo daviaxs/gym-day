@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="pt-br">
       <body className={roboto.className}>
         <StyledComponentsRegistry>
-          <GlobalStyle/>
+          <GlobalStyle />
           {children}
         </StyledComponentsRegistry>
       </body>

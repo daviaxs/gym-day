@@ -1,4 +1,4 @@
-export const sizesTheme = {
+export const themeSizes = {
   xs: 4,
   sm: 8,
   md: 16,

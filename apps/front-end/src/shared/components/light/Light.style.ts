@@ -4,7 +4,7 @@ import { themeColors } from '@/shared/styles/theme/palette'
 import styled from 'styled-components'
 
 export interface LightProps {
-  intensity?: 'high' | 'medium' | 'low'
+  $intensity?: 'high' | 'medium' | 'low'
   color: 'blue-500' | 'blue-300'
 }
 
@@ -16,9 +16,9 @@ export const LightStyle = styled.span<LightProps>`
   z-index: -1;
 
   opacity: ${(props) =>
-    props.intensity === 'high'
+    props.$intensity === 'high'
       ? '100%'
-      : props.intensity === 'medium'
+      : props.$intensity === 'medium'
         ? '50%'
         : '30%'};
 

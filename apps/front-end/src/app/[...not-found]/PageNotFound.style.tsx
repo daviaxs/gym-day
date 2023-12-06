@@ -31,11 +31,10 @@ export const InfoWrapper = styled.div`
   align-items: start;
   justify-content: center;
 
-  .text-alert {
-    color: ${themeColors['blue-100']};
-    font-weight: 800;
-    font-size: 4rem;
-    line-height: 90%;
+  .text-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `
 
@@ -45,13 +44,11 @@ export const BackWrapper = styled.div`
   gap: 1.25rem;
 
   .text-warning {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
     color: ${themeColors['blue-50']};
     letter-spacing: 1px;
-  }
-
-  .text-green-400 {
-    font-weight: 800;
-    font-size: 1.5rem;
-    color: ${themeColors['green-400']};
   }
 `

@@ -1,5 +1,6 @@
 import { GymDayLogo } from '@/shared/assets/gym-day-logo'
 import RobotPageNotFound from '@/shared/assets/imgs/robot-page-not-found.png'
+import { Light } from '@/shared/components/light/Light'
 import { Text } from '@/shared/components/text/Text'
 import { inter } from '@/shared/styles/theme/fonts'
 import Image from 'next/image'
@@ -49,6 +50,8 @@ export default function PageNotFound() {
           </Link>
         </BackWrapper>
       </InfoWrapper>
+
+      <Light color="blue-500" intensity="medium" />
     </Container>
   )
 }

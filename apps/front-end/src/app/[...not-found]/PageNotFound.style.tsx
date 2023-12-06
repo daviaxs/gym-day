@@ -22,6 +22,11 @@ export const Container = styled.main`
 
     object-fit: contain;
   }
+
+  .light {
+    position: absolute;
+    top: -25rem;
+  }
 `
 export const InfoWrapper = styled.div`
   display: flex;

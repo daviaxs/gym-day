@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { BackWrapper, Container, InfoWrapper } from './PageNotFound.style'
 import { Light } from '@/shared/components/light/Light'
+import { Button } from '@/shared/components/button/Button'
 
 export default function PageNotFound() {
   return (
@@ -46,7 +47,7 @@ export default function PageNotFound() {
           </div>
 
           <Link href="/">
-            <button>voltar</button>
+            <Button size="large">VOLTAR</Button>
           </Link>
         </BackWrapper>
       </InfoWrapper>

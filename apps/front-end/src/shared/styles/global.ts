@@ -12,6 +12,11 @@ export const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
   }
 
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
   body {
     background-color: ${themeColors['blue-dark-900']};
     color: ${themeColors['grey-50']};

@@ -61,7 +61,7 @@ export const ButtonStyle = styled.button<ButtonStyleProps>`
   align-items: center;
 
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: ${({ size }) => (size === 'normal' ? '1rem' : '1.5rem')};
   letter-spacing: 1px;
 
   color: ${themeColors['blue-50']};
@@ -87,6 +87,6 @@ export const ButtonStyle = styled.button<ButtonStyleProps>`
   transition: 0.2s ease-in-out;
 
   &:hover {
-    background-color: ${({ color }) => getButtonHoverColor(color)};
+    background-color: ${({ color }) => `${getButtonHoverColor(color)}20`};
   }
 `

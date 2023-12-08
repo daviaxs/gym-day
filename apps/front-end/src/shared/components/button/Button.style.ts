@@ -62,7 +62,7 @@ export const ButtonStyle = styled.button<ButtonStyleProps>`
 
   font-weight: 800;
   font-size: ${({ size }) => (size === 'normal' ? '1rem' : '1.5rem')};
-  letter-spacing: 1px;
+  letter-spacing: 0.7px;
 
   color: ${themeColors['blue-50']};
   background-color: ${({ color, variant }) =>
@@ -87,6 +87,9 @@ export const ButtonStyle = styled.button<ButtonStyleProps>`
   transition: 0.2s ease-in-out;
 
   &:hover {
-    background-color: ${({ color }) => `${getButtonHoverColor(color)}20`};
+    background-color: ${({ color, variant }) =>
+      variant === 'solid'
+        ? getButtonHoverColor(color)
+        : `${getButtonHoverColor(color)}20`};
   }
 `

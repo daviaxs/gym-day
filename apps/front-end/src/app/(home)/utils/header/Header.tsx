@@ -32,7 +32,7 @@ export function Header() {
         </div>
 
         <Link href="/">
-          <Button size="normal" variant="outline" color="purple">
+          <Button size="normal" $variant="outline" color="purple">
             Criar conta
           </Button>
         </Link>

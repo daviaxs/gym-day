@@ -4,7 +4,7 @@ import { themeColors } from '@/shared/styles/theme/palette'
 import styled from 'styled-components'
 
 export interface ButtonStyleProps {
-  variant?: 'outline' | 'solid'
+  $variant?: 'outline' | 'solid'
   color?: 'purple' | 'blue' | 'green' | 'red'
   size: 'normal' | 'large' | 'full'
   border?: boolean
@@ -65,10 +65,10 @@ export const ButtonStyle = styled.button<ButtonStyleProps>`
   letter-spacing: 0.7px;
 
   color: ${themeColors['blue-50']};
-  background-color: ${({ color, variant }) =>
+  background-color: ${({ color, $variant: variant }) =>
     variant === 'solid' ? getButtonColor(color) : 'transparent'};
 
-  border: ${({ variant, color, border }) => {
+  border: ${({ $variant: variant, color, border }) => {
     if (variant === 'outline' || border) {
       if (variant === 'outline') {
         return `2px solid ${getButtonColor(color)}`
@@ -87,7 +87,7 @@ export const ButtonStyle = styled.button<ButtonStyleProps>`
   transition: 0.2s ease-in-out;
 
   &:hover {
-    background-color: ${({ color, variant }) =>
+    background-color: ${({ color, $variant: variant }) =>
       variant === 'solid'
         ? getButtonHoverColor(color)
         : `${getButtonHoverColor(color)}20`};

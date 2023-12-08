@@ -5,9 +5,17 @@ type ButtonProps = ButtonStyleProps & {
   children: React.ReactNode
 }
 
-export function Button({ children, variant = 'solid', ...props }: ButtonProps) {
+export function Button({
+  children,
+  $variant = 'solid',
+  ...props
+}: ButtonProps) {
   return (
-    <ButtonStyle {...props} variant={variant} className={`${roboto.className}`}>
+    <ButtonStyle
+      {...props}
+      $variant={$variant}
+      className={`${roboto.className}`}
+    >
       {children}
     </ButtonStyle>
   )

@@ -16,7 +16,8 @@ export const HeaderStyle = styled.header`
   height: 4rem;
 
   .gym-day-logo {
-    width: 120px;
+    min-width: 120px;
+    max-width: 120px;
   }
 `
 export const AuthenticationContainer = styled.div`

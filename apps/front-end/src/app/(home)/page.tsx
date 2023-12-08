@@ -1,11 +1,9 @@
-import { Text } from '@/shared/components/text/Text'
+import { Header } from './utils/header/Header'
 
 export default function Home() {
   return (
     <div>
-      <Text as="p" color="orange-400" size="lg">
-        Gym Day - Hello World
-      </Text>
+      <Header />
     </div>
   )
 }

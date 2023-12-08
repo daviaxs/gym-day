@@ -1,4 +1,4 @@
-import { GymDayLogo } from '@/shared/assets/gym-day-logo'
+import { GymDayLogoBLueLarge } from '@/shared/assets/gym-day-logos/gym-day-logo-blue-large'
 import RobotPageNotFound from '@/shared/assets/imgs/robot-page-not-found.png'
 import { Text } from '@/shared/components/text/Text'
 import { inter } from '@/shared/styles/theme/fonts'
@@ -19,7 +19,7 @@ export default function PageNotFound() {
       />
 
       <InfoWrapper>
-        <GymDayLogo />
+        <GymDayLogoBLueLarge />
 
         <div className={`${inter.className} text-error`}>
           <Text size="4xl" color="blue-100" $weight="800">

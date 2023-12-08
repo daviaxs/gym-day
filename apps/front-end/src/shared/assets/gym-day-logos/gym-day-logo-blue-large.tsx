@@ -1,4 +1,4 @@
-export function GymDayLogo() {
+export function GymDayLogoBLueLarge() {
   return (
     <svg
       width="338"

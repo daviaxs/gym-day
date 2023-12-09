@@ -53,12 +53,14 @@ export const ButtonStyle = styled.button<ButtonStyleProps>`
   border: none;
   outline: none;
   cursor: pointer;
+  white-space: nowrap;
   text-decoration: none;
   border-radius: 0.5rem;
 
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0.5rem;
 
   font-weight: 800;
   font-size: ${({ size }) => (size === 'normal' ? '1rem' : '1.5rem')};

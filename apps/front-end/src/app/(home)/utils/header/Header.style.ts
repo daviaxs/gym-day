@@ -20,11 +20,21 @@ export const HeaderStyle = styled.header`
     max-width: 120px;
   }
 `
+
 export const AuthenticationContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1.375rem;
+
+  .icon {
+    transition: color 0.1s ease-in-out;
+    color: ${themeColors['purple-500']};
+  }
+
+  .create-account-button:hover > .icon {
+    color: ${themeColors['blue-50']};
+  }
 `
 export const LinkButton = styled.button`
   border: none;
@@ -35,6 +45,7 @@ export const LinkButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0.5rem;
 
   font-size: 1rem;
   letter-spacing: 0.7px;
@@ -43,5 +54,9 @@ export const LinkButton = styled.button`
 
   &:hover {
     text-decoration: underline;
+
+    .icon {
+      color: ${themeColors['blue-50']};
+    }
   }
 `

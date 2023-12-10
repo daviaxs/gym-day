@@ -13,7 +13,7 @@ export const HeaderStyle = styled.header`
 
   padding: 0 1.375rem;
   width: 100%;
-  height: 4rem;
+  height: 4.5rem;
 
   .gym-day-logo {
     min-width: 120px;

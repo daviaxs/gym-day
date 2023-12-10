@@ -13,7 +13,6 @@ export default function Home() {
   return (
     <HomePageContainer>
       <Header />
-
       <IntroductionContainer>
         <Text color="grey-50" size="2xl">
           Gym Day
@@ -21,7 +20,7 @@ export default function Home() {
 
         <IntroductionBG>
           <Image src={homePageLine} className="lines" alt="" priority />
-          <Light color="blue-300" />
+          <Light color="blue-300" $intensity="medium" />
         </IntroductionBG>
       </IntroductionContainer>
     </HomePageContainer>

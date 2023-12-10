@@ -39,6 +39,7 @@ export const IntroductionBG = styled.div`
   .light {
     position: absolute;
     width: 60%;
+    height: 60%;
     bottom: -25rem;
   }
 `

@@ -4,6 +4,11 @@ import { themeColors } from '@/shared/styles/theme/palette'
 import styled from 'styled-components'
 
 export const HeaderStyle = styled.header`
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  transition: transform 0.5s ease-in-out;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,6 +19,10 @@ export const HeaderStyle = styled.header`
   padding: 0 1.375rem;
   width: 100%;
   height: 4.5rem;
+
+  &.hideHeader {
+    transform: translateY(-100%);
+  }
 
   .gym-day-logo {
     min-width: 120px;

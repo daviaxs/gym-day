@@ -1,3 +1,5 @@
+'use client'
+
 import { GymDayLogoPurpleSmall } from '@/shared/assets/gym-day-logos/gym-day-logo-purple-small'
 import {
   AuthenticationContainer,
@@ -9,10 +11,13 @@ import Link from 'next/link'
 import { Text } from '@/shared/components/text/Text'
 import { roboto } from '@/shared/styles/theme/fonts'
 import { UserCheck, UserPlus } from 'lucide-react'
+import { useShowHeader } from '@/shared/hooks/useShowHeader'
 
 export function Header() {
+  const showHeader = useShowHeader()
+
   return (
-    <HeaderStyle>
+    <HeaderStyle className={showHeader ? '' : 'hideHeader'}>
       <GymDayLogoPurpleSmall />
 
       <AuthenticationContainer>

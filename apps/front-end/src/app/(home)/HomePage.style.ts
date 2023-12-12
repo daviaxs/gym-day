@@ -20,6 +20,32 @@ export const IntroductionContainer = styled.div`
   height: 950px;
 `
 
+export const IntroductionContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 2rem;
+
+  .presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      line-height: 115%;
+    }
+  }
+
+  .gym-day-logo {
+    transform: scale(1.8);
+    margin-top: 2.5rem;
+    margin-bottom: 2.8rem;
+  }
+`
+
 export const IntroductionBG = styled.div`
   position: absolute;
   width: 100%;

@@ -67,12 +67,12 @@ export const ButtonStyle = styled.button<ButtonStyleProps>`
   letter-spacing: 0.7px;
 
   color: ${themeColors['blue-50']};
-  background-color: ${({ color, $variant: variant }) =>
-    variant === 'solid' ? getButtonColor(color) : 'transparent'};
+  background-color: ${({ color, $variant }) =>
+    $variant === 'solid' ? getButtonColor(color) : 'transparent'};
 
-  border: ${({ $variant: variant, color, border }) => {
-    if (variant === 'outline' || border) {
-      if (variant === 'outline') {
+  border: ${({ $variant, color, border }) => {
+    if ($variant === 'outline' || border) {
+      if ($variant === 'outline') {
         return `2px solid ${getButtonColor(color)}`
       } else if (border) {
         return `1px solid ${getButtonBorderColor(color)}`
@@ -89,8 +89,8 @@ export const ButtonStyle = styled.button<ButtonStyleProps>`
   transition: 0.2s ease-in-out;
 
   &:hover {
-    background-color: ${({ color, $variant: variant }) =>
-      variant === 'solid'
+    background-color: ${({ color, $variant }) =>
+      $variant === 'solid'
         ? getButtonHoverColor(color)
         : `${getButtonHoverColor(color)}20`};
   }

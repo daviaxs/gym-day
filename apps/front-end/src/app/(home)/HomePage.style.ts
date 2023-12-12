@@ -1,5 +1,6 @@
 'use client'
 
+import { themeSizes } from '@/shared/styles/theme/sizes'
 import styled from 'styled-components'
 
 export const HomePageContainer = styled.main`
@@ -27,6 +28,7 @@ export const IntroductionContent = styled.div`
   align-items: center;
 
   margin-top: 2rem;
+  gap: ${themeSizes['3xl']}rem;
 
   .presentation {
     display: flex;
@@ -36,6 +38,36 @@ export const IntroductionContent = styled.div`
 
     p {
       line-height: 115%;
+    }
+  }
+
+  .presentation2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: ${themeSizes['2xl']}rem;
+
+    .createAccountButton,
+    .handStrong {
+      transition: all 0.25s ease-out;
+    }
+
+    .createAccountButton:hover {
+      transform: scale(1.1);
+
+      .handStrong {
+        transform: scale(1.1);
+        height: 48px;
+      }
+    }
+
+    .knowMore {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: ${themeSizes.sm}rem;
     }
   }
 

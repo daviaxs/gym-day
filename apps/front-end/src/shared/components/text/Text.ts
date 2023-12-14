@@ -10,12 +10,13 @@ interface TextProps {
   size: keyof typeof themeSizes
   $weight?: '400' | '500' | '700' | '800' | '900'
   $textalign?: 'center' | 'left' | 'right'
+  $lineheight?: string
 }
 
 export const Text = styled.p<TextProps>`
   color: ${({ color }) => themeColors[color]};
   font-size: ${({ size }) => themeSizes[size]}rem;
   font-weight: ${({ $weight }) => $weight};
-  line-height: 90%;
+  line-height: ${({ $lineheight }) => $lineheight || '90%'};
   text-align: ${({ $textalign }) => $textalign};
 `

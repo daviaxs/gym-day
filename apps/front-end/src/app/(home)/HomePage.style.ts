@@ -18,7 +18,7 @@ export const IntroductionContainer = styled.div`
   overflow: hidden;
 
   width: 100%;
-  height: 950px;
+  height: 800px;
 `
 
 export const IntroductionContent = styled.div`
@@ -27,7 +27,7 @@ export const IntroductionContent = styled.div`
   justify-content: center;
   align-items: center;
 
-  margin-top: 2rem;
+  margin-top: ${themeSizes.lg}rem;
   gap: ${themeSizes['3xl']}rem;
 
   .presentation {
@@ -96,8 +96,8 @@ export const IntroductionBG = styled.div`
 
   .light {
     position: absolute;
-    width: 60%;
-    height: 60%;
-    bottom: -25rem;
+    width: 70rem;
+    height: 50rem;
+    bottom: -35rem;
   }
 `

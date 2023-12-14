@@ -16,6 +16,7 @@ import Link from 'next/link'
 import { ArrowDownCircle } from 'lucide-react'
 import { themeColors } from '@/shared/styles/theme/palette'
 import { HandStrong } from '@/shared/assets/icons/HandStrong'
+import { Card } from './utils/card/Card'
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <IntroductionContent>
           <div className="presentation">
             <Text
+              as="h2"
               color="grey-50"
               size="2xl"
               $weight="700"
@@ -77,6 +79,7 @@ export default function Home() {
           <Light color="blue-300" $intensity="medium" />
         </IntroductionBG>
       </IntroductionContainer>
+      <Card />
     </HomePageContainer>
   )
 }

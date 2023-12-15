@@ -23,17 +23,10 @@ export function useShowHeader() {
   }, [])
 
   useEffect(() => {
-    if (scrollData.y > 50) {
-      setShowHeader(false)
-    } else {
-      setShowHeader(true)
-    }
+    const shouldShowHeader =
+      scrollData.y > 50 && scrollData.y > scrollData.lastY
 
-    if (scrollData.y > scrollData.lastY && scrollData.y > 50) {
-      setShowHeader(false)
-    } else {
-      setShowHeader(true)
-    }
+    setShowHeader(!shouldShowHeader)
   }, [scrollData])
 
   return showHeader

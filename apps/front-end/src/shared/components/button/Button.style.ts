@@ -71,12 +71,10 @@ export const ButtonStyle = styled.button<ButtonStyleProps>`
     $variant === 'solid' ? getButtonColor(color) : 'transparent'};
 
   border: ${({ $variant, color, border }) => {
-    if ($variant === 'outline' || border) {
-      if ($variant === 'outline') {
-        return `2px solid ${getButtonColor(color)}`
-      } else if (border) {
-        return `1px solid ${getButtonBorderColor(color)}`
-      }
+    if ($variant === 'outline') {
+      return `2px solid ${getButtonColor(color)}`
+    } else if (border) {
+      return `1px solid ${getButtonBorderColor(color)}`
     } else {
       return 'none'
     }

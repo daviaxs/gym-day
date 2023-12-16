@@ -4,6 +4,7 @@ import {
   IntroductionBG,
   IntroductionContainer,
   IntroductionContent,
+  ReasonsContainer,
 } from './HomePage.style'
 import { Light } from '@/shared/components/light/Light'
 import Image from 'next/image'
@@ -79,7 +80,14 @@ export default function Home() {
           <Light color="blue-300" $intensity="medium" />
         </IntroductionBG>
       </IntroductionContainer>
+
       <Card />
+
+      <ReasonsContainer>
+        <Text as="h2" size="2xl" color="blue-50" $weight="800">
+          Motivos para Escolher o GymDay
+        </Text>
+      </ReasonsContainer>
     </HomePageContainer>
   )
 }

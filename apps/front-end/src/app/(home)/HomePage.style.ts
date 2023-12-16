@@ -8,6 +8,8 @@ export const HomePageContainer = styled.main`
   flex-direction: column;
 `
 
+//* Introduction */
+
 export const IntroductionContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -100,4 +102,22 @@ export const IntroductionBG = styled.div`
     height: 50rem;
     bottom: -35rem;
   }
+`
+
+//* Reasons to use GymDay */
+
+export const ReasonsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: start;
+
+  margin-top: 20rem;
+  padding: ${themeSizes['3xl']}rem 5.25rem;
+  height: fit-content;
+  width: 100%;
+
+  border-bottom: 2px solid rgba(51, 59, 92, 0.2);
+  background: linear-gradient(233deg, #40446a -65.82%, #000415 104.21%);
 `

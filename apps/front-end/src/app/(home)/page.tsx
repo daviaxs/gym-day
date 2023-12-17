@@ -4,6 +4,7 @@ import {
   IntroductionBG,
   IntroductionContainer,
   IntroductionContent,
+  ReasonsCards,
   ReasonsContainer,
 } from './HomePage.style'
 import { Light } from '@/shared/components/light/Light'
@@ -16,8 +17,17 @@ import { Button } from '@/shared/components/button/Button'
 import Link from 'next/link'
 import { ArrowDownCircle } from 'lucide-react'
 import { themeColors } from '@/shared/styles/theme/palette'
-import { HandStrong } from '@/shared/assets/icons/HandStrong'
 import { Card } from './utils/card/Card'
+import { Reasons } from './utils/reasonsCard'
+import {
+  HandStrong,
+  AppleGradiant,
+  DumbbellGradiant,
+  HandStrongGradiant,
+  MeditationGradiant,
+  MoleculeGradiant,
+  ShirtGradiant,
+} from '@/shared/assets/icons'
 
 export default function Home() {
   return (
@@ -87,6 +97,92 @@ export default function Home() {
         <Text as="h2" size="2xl" color="blue-50" $weight="800">
           Motivos para Escolher o GymDay
         </Text>
+
+        <ReasonsCards>
+          <Reasons.Card>
+            <Reasons.Icon>
+              <DumbbellGradiant />
+            </Reasons.Icon>
+
+            <Reasons.Title>Explore a Musculação</Reasons.Title>
+
+            <Reasons.Description>
+              Aproveite guias especializados, dicas de treinamento e planos
+              personalizados para atingir seus objetivos de construção muscular
+              de maneira eficaz e segura.
+            </Reasons.Description>
+          </Reasons.Card>
+
+          <Reasons.Card>
+            <Reasons.Icon>
+              <HandStrongGradiant />
+            </Reasons.Icon>
+
+            <Reasons.Title>Domine a Calistenia</Reasons.Title>
+
+            <Reasons.Description>
+              Aprenda a dominar seu próprio peso corporal com rotinas
+              desafiadoras, exercícios progressivos e orientações práticas para
+              aumentar sua força e flexibilidade.
+            </Reasons.Description>
+          </Reasons.Card>
+
+          <Reasons.Card>
+            <Reasons.Icon>
+              <MeditationGradiant />
+            </Reasons.Icon>
+
+            <Reasons.Title>Nutra seu Bem-Estar</Reasons.Title>
+
+            <Reasons.Description>
+              Encontre dicas para relaxamento, meditação e equilíbrio saudável
+              entre corpo e mente, para que você possa se sentir bem no dia a
+              dia.
+            </Reasons.Description>
+          </Reasons.Card>
+
+          <Reasons.Card>
+            <Reasons.Icon>
+              <AppleGradiant />
+            </Reasons.Icon>
+
+            <Reasons.Title>Aprimore sua Dieta</Reasons.Title>
+
+            <Reasons.Description>
+              Obtenha orientações sobre nutrição adequada, planos de refeições
+              equilibrados e estratégias para alcançar seus objetivos
+              alimentares, seja ganhar massa muscular ou perder peso.
+            </Reasons.Description>
+          </Reasons.Card>
+
+          <Reasons.Card>
+            <Reasons.Icon>
+              <MoleculeGradiant />
+            </Reasons.Icon>
+
+            <Reasons.Title>Suplementos</Reasons.Title>
+
+            <Reasons.Description>
+              Explore informações sobre diferentes suplementos, seus benefícios
+              e como eles podem complementar seu regime de treinamento e dieta
+              de maneira informada e segura.
+            </Reasons.Description>
+          </Reasons.Card>
+
+          <Reasons.Card>
+            <Reasons.Icon>
+              <ShirtGradiant />
+            </Reasons.Icon>
+
+            <Reasons.Title>Vestuário</Reasons.Title>
+
+            <Reasons.Description>
+              Explore uma variedade de roupas e equipamentos adequados para
+              otimizar seu desempenho nos treinos, garantindo conforto, estilo e
+              funcionalidade.
+            </Reasons.Description>
+          </Reasons.Card>
+        </ReasonsCards>
       </ReasonsContainer>
     </HomePageContainer>
   )

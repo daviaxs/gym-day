@@ -117,7 +117,13 @@ export const ReasonsContainer = styled.div`
   padding: ${themeSizes['3xl']}rem 5.25rem;
   height: fit-content;
   width: 100%;
+  gap: 5.3rem;
 
   border-bottom: 2px solid rgba(51, 59, 92, 0.2);
   background: linear-gradient(233deg, #40446a -65.82%, #000415 104.21%);
+`
+export const ReasonsCards = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: ${themeSizes['3xl']}rem;
 `

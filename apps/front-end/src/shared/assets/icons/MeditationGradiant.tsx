@@ -1,4 +1,4 @@
-export function HandStrongGradiant() {
+export function MeditationGradiant() {
   return (
     <svg
       width="69"

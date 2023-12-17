@@ -1,4 +1,4 @@
-export function DumbbellGradiant() {
+export function AppleGradiant() {
   return (
     <svg
       width="55"

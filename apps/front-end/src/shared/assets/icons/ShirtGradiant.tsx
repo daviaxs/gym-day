@@ -1,4 +1,4 @@
-export function HandStrongGradiant() {
+export function ShirtGradiant() {
   return (
     <svg
       width="82"

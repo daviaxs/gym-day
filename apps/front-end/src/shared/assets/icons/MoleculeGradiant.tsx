@@ -1,4 +1,4 @@
-export function HandStrongGradiant() {
+export function MoleculeGradiant() {
   return (
     <svg
       width="65"

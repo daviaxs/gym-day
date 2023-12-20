@@ -127,3 +127,33 @@ export const ReasonsCards = styled.ul`
   grid-template-columns: repeat(3, 1fr);
   gap: ${themeSizes['3xl']}rem;
 `
+//* The Triad */
+
+export const TheTriadContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: ${themeSizes['2xl']}rem;
+  margin: ${themeSizes['4xl']}rem 0;
+
+  .introduction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.85rem;
+    max-width: 817px;
+  }
+
+  .TheTriadCards {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+
+    gap: 3.75rem;
+    max-width: 817px;
+  }
+`

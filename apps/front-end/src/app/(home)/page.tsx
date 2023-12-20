@@ -6,6 +6,7 @@ import {
   IntroductionContent,
   ReasonsCards,
   ReasonsContainer,
+  TheTriadContainer,
 } from './HomePage.style'
 import { Light } from '@/shared/components/light/Light'
 import Image from 'next/image'
@@ -15,7 +16,7 @@ import { Text } from '@/shared/components/text/Text'
 import { inter } from '@/shared/styles/theme/fonts'
 import { Button } from '@/shared/components/button/Button'
 import Link from 'next/link'
-import { ArrowDownCircle } from 'lucide-react'
+import { ArrowDownCircle, Disc } from 'lucide-react'
 import { themeColors } from '@/shared/styles/theme/palette'
 import { Card } from './utils/card/Card'
 import { Reasons } from './utils/reasonsCard'
@@ -28,6 +29,10 @@ import {
   MoleculeGradiant,
   ShirtGradiant,
 } from '@/shared/assets/icons'
+import { TheTriadCard } from './utils/theTriadCard/TheTriadCard'
+import { Focus } from '@/shared/assets/svgs/focus'
+import { Discipline } from '@/shared/assets/svgs/Discipline'
+import { Constancy } from '@/shared/assets/svgs/Constancy'
 
 export default function Home() {
   return (
@@ -184,6 +189,33 @@ export default function Home() {
           </Reasons.Card>
         </ReasonsCards>
       </ReasonsContainer>
+
+      <TheTriadContainer>
+        <div className="introduction">
+          <Text as="h2" size="2xl" color="blue-50">
+            A Tríade da Realização
+          </Text>
+
+          <Text $weight="500" size="lg" color="blue-50" $textalign="center">
+            No caminho para alcançar seus objetivos, o Foco é sua bússola, a
+            Disciplina é sua força e a Constância é seu combustível.
+          </Text>
+        </div>
+
+        <div className="TheTriadCards">
+          <TheTriadCard title="Foco">
+            <Focus />
+          </TheTriadCard>
+
+          <TheTriadCard title="Disciplina">
+            <Discipline />
+          </TheTriadCard>
+
+          <TheTriadCard title="Constância">
+            <Constancy />
+          </TheTriadCard>
+        </div>
+      </TheTriadContainer>
     </HomePageContainer>
   )
 }

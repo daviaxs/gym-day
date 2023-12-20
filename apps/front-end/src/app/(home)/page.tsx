@@ -30,9 +30,7 @@ import {
   ShirtGradiant,
 } from '@/shared/assets/icons'
 import { TheTriadCard } from './utils/theTriadCard/TheTriadCard'
-import { Focus } from '@/shared/assets/svgs/focus'
-import { Discipline } from '@/shared/assets/svgs/Discipline'
-import { Constancy } from '@/shared/assets/svgs/Constancy'
+import { Constancy, Discipline, Focus } from '@/shared/assets/svgs'
 
 export default function Home() {
   return (

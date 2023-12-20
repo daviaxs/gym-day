@@ -21,7 +21,7 @@ export function Header() {
       <GymDayLogoPurpleSmall />
 
       <AuthenticationContainer>
-        <Link href="/">
+        <Link href="/entrar">
           <LinkButton>
             <UserCheck size={20} className="icon" />
             <Text size="md" $weight="800" className={`${roboto.className}`}>

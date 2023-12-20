@@ -65,9 +65,7 @@ export default function Home() {
           <div className="presentation2">
             <Link href="/">
               <Button size="normal" className="createAccountButton">
-                <Text color="blue-50" size="xlSm">
-                  Criar conta
-                </Text>
+                <Text size="xlSm">Criar conta</Text>
 
                 <HandStrong />
               </Button>
@@ -97,7 +95,7 @@ export default function Home() {
       <Card />
 
       <ReasonsContainer>
-        <Text as="h2" size="2xl" color="blue-50" $weight="800">
+        <Text as="h2" size="2xl" $weight="800">
           Motivos para Escolher o GymDay
         </Text>
 
@@ -190,11 +188,11 @@ export default function Home() {
 
       <TheTriadContainer>
         <div className="introduction">
-          <Text as="h2" size="2xl" color="blue-50">
+          <Text as="h2" size="2xl">
             A Tríade da Realização
           </Text>
 
-          <Text $weight="500" size="lg" color="blue-50" $textalign="center">
+          <Text $weight="500" size="lg" $textalign="center">
             No caminho para alcançar seus objetivos, o Foco é sua bússola, a
             Disciplina é sua força e a Constância é seu combustível.
           </Text>

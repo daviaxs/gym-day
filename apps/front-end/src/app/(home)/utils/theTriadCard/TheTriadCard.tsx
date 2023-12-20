@@ -11,7 +11,7 @@ interface TheTriadCardProps {
 export function TheTriadCard({ children, title, arrow }: TheTriadCardProps) {
   return (
     <TheTriadCardContainer>
-      <Text color="blue-50" size="lg" className={inter.className} $weight="700">
+      <Text size="lg" className={inter.className} $weight="700">
         {title}
       </Text>
 

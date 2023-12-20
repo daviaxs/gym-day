@@ -24,12 +24,7 @@ export function Header() {
         <Link href="/">
           <LinkButton>
             <UserCheck size={20} className="icon" />
-            <Text
-              size="md"
-              color="blue-50"
-              $weight="800"
-              className={`${roboto.className}`}
-            >
+            <Text size="md" $weight="800" className={`${roboto.className}`}>
               Entrar
             </Text>
           </LinkButton>

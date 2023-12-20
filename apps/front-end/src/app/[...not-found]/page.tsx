@@ -41,9 +41,7 @@ export default function PageNotFound() {
             >
               AVISO:
             </Text>
-            <Text size="lg" color="blue-50">
-              A página não foi encontrada.
-            </Text>
+            <Text size="lg">A página não foi encontrada.</Text>
           </div>
 
           <Link href="/">

@@ -12,7 +12,6 @@ export function Card() {
         as="h4"
         $textalign="center"
         size="xl"
-        color="blue-50"
         $weight="800"
         $lineheight="120%"
       >
@@ -24,7 +23,7 @@ export function Card() {
         <CardItem>
           <Image src={DumbbelImg} alt="" className="image" />
 
-          <Text $textalign="center" size="xl" color="blue-50" $weight="800">
+          <Text $textalign="center" size="xl" $weight="800">
             Musculação
           </Text>
         </CardItem>
@@ -34,7 +33,7 @@ export function Card() {
         <CardItem>
           <Image src={WomanDoingCalisthenicsImg} alt="" className="image" />
 
-          <Text $textalign="center" size="xl" color="blue-50" $weight="800">
+          <Text $textalign="center" size="xl" $weight="800">
             Calistenia
           </Text>
         </CardItem>
@@ -44,7 +43,7 @@ export function Card() {
         <CardItem>
           <Image src={ManMeditatingImg} alt="" className="image" />
 
-          <Text $textalign="center" size="xl" color="blue-50" $weight="800">
+          <Text $textalign="center" size="xl" $weight="800">
             Bem-estar
           </Text>
         </CardItem>

@@ -13,10 +13,6 @@ export const SignInContainer = styled.main`
 
   padding: 3.6rem;
 
-  div {
-    z-index: 1;
-  }
-
   .welcomeContainer {
     display: flex;
     flex-direction: column;
@@ -25,7 +21,6 @@ export const SignInContainer = styled.main`
 
   .light {
     position: absolute;
-    z-index: 0;
     top: -20rem;
     left: -20rem;
   }

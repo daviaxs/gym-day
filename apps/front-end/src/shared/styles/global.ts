@@ -3,7 +3,11 @@
 import { createGlobalStyle } from 'styled-components'
 import { themeColors } from './theme/palette'
 
-export const GlobalStyle = createGlobalStyle`
+interface GlobalStyleProps {
+  backgroundColor?: keyof typeof themeColors
+}
+
+export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
   * {
     margin: 0;
     padding: 0;
@@ -18,7 +22,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: ${themeColors['blue-dark-900']};
+    background-color: ${(props) =>
+      themeColors[props.backgroundColor ?? 'blue-dark-900']};
     color: ${themeColors['grey-50']};
   }
 

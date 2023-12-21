@@ -5,7 +5,18 @@ import styled from 'styled-components'
 
 export interface LightProps {
   $intensity?: 'high' | 'medium' | 'low'
-  color: 'blue-500' | 'blue-300'
+  color: 'blue-500' | 'blue-300' | 'grey-500'
+}
+
+const getLightColor = (color: LightProps['color']) => {
+  switch (color) {
+    case 'blue-500':
+      return themeColors['blue-500']
+    case 'blue-300':
+      return themeColors['blue-300']
+    case 'grey-500':
+      return themeColors['grey-500']
+  }
 }
 
 export const LightStyle = styled.span<LightProps>`
@@ -22,8 +33,5 @@ export const LightStyle = styled.span<LightProps>`
         ? '50%'
         : '30%'};
 
-  background-color: ${(props) =>
-    props.color === 'blue-500'
-      ? themeColors['blue-500']
-      : themeColors['blue-300']};
+  background-color: ${(props) => getLightColor(props.color)};
 `

@@ -30,7 +30,7 @@ export function Header() {
           </LinkButton>
         </Link>
 
-        <Link href="/">
+        <Link href="/auth/registrar">
           <Button
             size="normal"
             $variant="outline"

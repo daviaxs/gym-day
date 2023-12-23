@@ -22,7 +22,7 @@ export function WelcomeContainer({ children, backLink }: WelcomeProps) {
           <ArrowLeft color={themeColors['green-300']} />
 
           <Text size="lgSm" color="green-300">
-            Voltar para login
+            Ir para login
           </Text>
         </Link>
       )}

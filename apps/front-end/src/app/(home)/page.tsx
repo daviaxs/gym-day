@@ -63,7 +63,7 @@ export default function Home() {
           </div>
 
           <div className="presentation2">
-            <Link href="/">
+            <Link href="/auth/registrar">
               <Button size="normal" className="createAccountButton">
                 <Text size="xlSm">Criar conta</Text>
 

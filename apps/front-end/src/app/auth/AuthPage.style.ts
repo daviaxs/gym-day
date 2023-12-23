@@ -14,14 +14,6 @@ export const AuthContainer = styled.div`
   padding: 0 0 0 3.6rem;
   gap: 130px;
 
-  .welcomeContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 3.75rem;
-
-    max-width: 600px;
-  }
-
   .light {
     position: absolute;
     top: -20rem;

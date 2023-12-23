@@ -1,26 +1,21 @@
-import { GymDayLogoBLueLarge } from '@/shared/assets/gym-day-logos/gym-day-logo-blue-large'
 import { AuthContainer } from '../AuthPage.style'
-import { Text } from '@/shared/components/text/Text'
 import { Form } from '../utils/form/Form'
 import { Light } from '@/shared/components/light/Light'
-import { inter } from '@/shared/styles/theme/fonts'
+import { Welcome } from '../utils/welcome'
 
 export default function SignUp() {
   return (
     <AuthContainer>
-      <div className="welcomeContainer">
-        <GymDayLogoBLueLarge />
-
-        <Text
-          as="h1"
-          size="xl"
-          className={inter.className}
-          $weight="800"
-          $lineheight="110%"
-        >
+      <Welcome.Container backLink>
+        <Welcome.Title>
           Seu progresso começa com um simples clique!
-        </Text>
-      </div>
+        </Welcome.Title>
+
+        <Welcome.Description>
+          Junte-se a nós hoje e dê o primeiro passo para alcançar seus objetivos
+          de bem-estar e condicionamento físico.
+        </Welcome.Description>
+      </Welcome.Container>
 
       <Form title="Criar conta" />
 

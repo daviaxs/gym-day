@@ -4,6 +4,7 @@ import { ButtonStyle, ButtonStyleProps } from './Button.style'
 type ButtonProps = ButtonStyleProps & {
   children: React.ReactNode
   className?: string
+  type?: 'button' | 'submit' | 'reset'
 }
 
 export function Button({

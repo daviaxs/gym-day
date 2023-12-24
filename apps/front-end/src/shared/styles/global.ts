@@ -27,6 +27,16 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
     color: ${themeColors['grey-50']};
   }
 
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus, 
+  input:-webkit-autofill:active{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: ${themeColors['grey-100']};
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 20px 20px transparent;
+  }
+
   /* ===== Scrollbar CSS ===== */
   /* Firefox */
   * {

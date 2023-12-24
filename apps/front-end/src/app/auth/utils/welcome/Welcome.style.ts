@@ -22,6 +22,8 @@ export const WelcomeContainerStyle = styled.div`
     justify-content: start;
     gap: 1rem;
 
+    width: fit-content;
+
     &:hover {
       cursor: pointer;
       color: ${themeColors['green-200']};

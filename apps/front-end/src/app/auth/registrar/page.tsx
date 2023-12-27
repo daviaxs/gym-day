@@ -7,25 +7,13 @@ import { Form } from '../utils/form'
 import { Button } from '@/shared/components/button/Button'
 import { Text } from '@/shared/components/text/Text'
 import { TextSpan } from '@/shared/components/text/TextSpan'
-import { SubmitButton } from '../utils/form/Form.style'
+import { SpanContainer, SubmitButton } from '../utils/form/Form.style'
 import { useSignUpForm } from '@/shared/hooks/useSignUpForm'
-import { useForm } from 'react-hook-form'
-import { createUserData, signUpSchema } from '@/shared/schemas/signUpSchema'
-import { zodResolver } from '@hookform/resolvers/zod'
+import { FormProvider } from 'react-hook-form'
+import { ErroMessage } from '../utils/form/ErrorMenssage'
 
 export default function SignUp() {
-  const { createUSer } = useSignUpForm()
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitted, isValid },
-  } = useForm<createUserData>({
-    resolver: zodResolver(signUpSchema),
-    mode: 'onChange',
-  })
-
-  console.log(errors)
+  const { createUSer, methods } = useSignUpForm()
 
   return (
     <AuthContainer>
@@ -40,54 +28,68 @@ export default function SignUp() {
         </Welcome.Description>
       </Welcome.Container>
 
-      <Form.Container title="Criar conta">
-        <Form.Content onSubmit={handleSubmit(createUSer)}>
-          <Form.Input
-            type="email"
-            placeholder="Email"
-            register={register('email')}
-          />
-          {errors.email && <span>{errors.email.message}</span>}
+      <FormProvider {...methods}>
+        <Form.Container title="Criar conta">
+          <Form.Content onSubmit={methods.handleSubmit(createUSer)}>
+            <SpanContainer>
+              <Form.Input
+                type="email"
+                placeholder="Email"
+                register={methods.register('email')}
+              />
+              <ErroMessage name="email" />
+            </SpanContainer>
 
-          <Form.Input
-            type="text"
-            placeholder="Nome"
-            autoComplete="name"
-            register={register('name')}
-          />
-          {errors.name && <span>{errors.name.message}</span>}
+            <SpanContainer>
+              <Form.Input
+                type="text"
+                placeholder="Nome"
+                autoComplete="name"
+                register={methods.register('name')}
+              />
+              <ErroMessage name="name" />
+            </SpanContainer>
 
-          <Form.Input
-            type="password"
-            placeholder="Senha"
-            autoComplete="new-password"
-            register={register('password')}
-          />
-          {errors.password && <span>{errors.password.message}</span>}
+            <SpanContainer>
+              <Form.Input
+                type="password"
+                placeholder="Senha"
+                autoComplete="new-password"
+                register={methods.register('password')}
+              />
+              <ErroMessage name="password" />
+            </SpanContainer>
 
-          <Form.Input
-            type="password"
-            placeholder="Confirmar senha"
-            autoComplete="new-password"
-            register={register('verifyPassword')}
-          />
-          {errors.verifyPassword && (
-            <span>{errors.verifyPassword.message}</span>
-          )}
+            <SpanContainer>
+              <Form.Input
+                type="password"
+                placeholder="Confirmar senha"
+                autoComplete="new-password"
+                register={methods.register('verifyPassword')}
+              />
+              <ErroMessage name="verifyPassword" />
+            </SpanContainer>
 
-          <SubmitButton>
-            <Text size="lgSm" $textalign="center" $lineheight="110%">
-              Ao se registrar, você aceita nossos{' '}
-              <TextSpan $hoverUnderline>termos de uso</TextSpan> e a nossa
-              <TextSpan $hoverUnderline> política de privacidade</TextSpan>.
-            </Text>
+            <SubmitButton>
+              <Text size="lgSm" $textalign="center" $lineheight="110%">
+                Ao se registrar, você aceita nossos{' '}
+                <TextSpan $hoverUnderline>termos de uso</TextSpan> e a nossa
+                <TextSpan $hoverUnderline> política de privacidade</TextSpan>.
+              </Text>
 
-            <Button type="submit" size="full" disabled={!isValid}>
-              Criar conta
-            </Button>
-          </SubmitButton>
-        </Form.Content>
-      </Form.Container>
+              <Button
+                type="submit"
+                size="full"
+                disabled={
+                  !methods.formState.isValid || methods.formState.isSubmitting
+                }
+              >
+                Criar conta
+              </Button>
+            </SubmitButton>
+          </Form.Content>
+        </Form.Container>
+      </FormProvider>
 
       <Light color="grey-500" />
     </AuthContainer>

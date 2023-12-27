@@ -4,12 +4,14 @@ import { ButtonStyle, ButtonStyleProps } from './Button.style'
 type ButtonProps = ButtonStyleProps & {
   children: React.ReactNode
   className?: string
+  disabled?: boolean
   type?: 'button' | 'submit' | 'reset'
 }
 
 export function Button({
   children,
   $variant = 'solid',
+  disabled = false,
   className,
   ...props
 }: ButtonProps) {
@@ -18,6 +20,7 @@ export function Button({
       {...props}
       $variant={$variant}
       className={`${roboto.className} ${className}`}
+      disabled={disabled}
     >
       {children}
     </ButtonStyle>

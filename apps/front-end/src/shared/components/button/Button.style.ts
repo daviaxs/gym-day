@@ -92,4 +92,9 @@ export const ButtonStyle = styled.button<ButtonStyleProps>`
         ? getButtonHoverColor(color)
         : `${getButtonHoverColor(color)}20`};
   }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
 `

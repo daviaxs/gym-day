@@ -1,5 +1,9 @@
 import { FormContentStyle } from './Form.style'
 
-export function FormContent({ children }: { children: React.ReactNode }) {
-  return <FormContentStyle>{children}</FormContentStyle>
+interface FormContentProps extends React.HTMLAttributes<HTMLFormElement> {
+  children: React.ReactNode
+}
+
+export function FormContent({ children, ...props }: FormContentProps) {
+  return <FormContentStyle {...props}>{children}</FormContentStyle>
 }

@@ -9,9 +9,23 @@ import { Text } from '@/shared/components/text/Text'
 import { TextSpan } from '@/shared/components/text/TextSpan'
 import { SubmitButton } from '../utils/form/Form.style'
 import { useSignUpForm } from '@/shared/hooks/useSignUpForm'
+import { useForm } from 'react-hook-form'
+import { createUserData, signUpSchema } from '@/shared/schemas/signUpSchema'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 export default function SignUp() {
-  const { buttonDisabled, handleInputChange, handleSubmit } = useSignUpForm()
+  const { createUSer } = useSignUpForm()
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitted, isValid },
+  } = useForm<createUserData>({
+    resolver: zodResolver(signUpSchema),
+    mode: 'onChange',
+  })
+
+  console.log(errors)
 
   return (
     <AuthContainer>
@@ -27,36 +41,39 @@ export default function SignUp() {
       </Welcome.Container>
 
       <Form.Container title="Criar conta">
-        <Form.Content onSubmit={handleSubmit}>
+        <Form.Content onSubmit={handleSubmit(createUSer)}>
           <Form.Input
-            name="email"
             type="email"
             placeholder="Email"
-            onChange={handleInputChange}
+            register={register('email')}
           />
+          {errors.email && <span>{errors.email.message}</span>}
+
           <Form.Input
-            name="name"
             type="text"
             placeholder="Nome"
             autoComplete="name"
-            onChange={handleInputChange}
+            register={register('name')}
           />
+          {errors.name && <span>{errors.name.message}</span>}
 
           <Form.Input
-            name="password"
             type="password"
             placeholder="Senha"
             autoComplete="new-password"
-            onChange={handleInputChange}
+            register={register('password')}
           />
+          {errors.password && <span>{errors.password.message}</span>}
 
           <Form.Input
-            name="verifyPassword"
             type="password"
             placeholder="Confirmar senha"
             autoComplete="new-password"
-            onChange={handleInputChange}
+            register={register('verifyPassword')}
           />
+          {errors.verifyPassword && (
+            <span>{errors.verifyPassword.message}</span>
+          )}
 
           <SubmitButton>
             <Text size="lgSm" $textalign="center" $lineheight="110%">
@@ -65,7 +82,7 @@ export default function SignUp() {
               <TextSpan $hoverUnderline> política de privacidade</TextSpan>.
             </Text>
 
-            <Button type="submit" size="full" disabled={buttonDisabled}>
+            <Button type="submit" size="full" disabled={!isValid}>
               Criar conta
             </Button>
           </SubmitButton>

@@ -7,11 +7,7 @@ export const signUpSchema = z
     password: z.string().min(6),
     verifyPassword: z.string().min(6),
   })
-  .superRefine(({ password, verifyPassword }, ctx) => {
-    if (password !== verifyPassword) {
-      ctx.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: 'As senhas não conferem',
-      })
-    }
+  .refine((data) => data.password === data.verifyPassword, {
+    message: 'As senhas devem ser iguais',
+    path: ['verifyPassword'],
   })

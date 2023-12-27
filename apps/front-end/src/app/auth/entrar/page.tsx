@@ -19,10 +19,20 @@ export default function SignIn() {
 
       <Form.Container title="Criar conta">
         <Form.Content>
-          <Form.Input name="email" type="email" placeholder="Email" />
+          <Form.Input
+            name="email"
+            type="email"
+            placeholder="Email"
+            autoComplete="current-email"
+          />
 
           <SpanContainer className="passwordSpanContainer">
-            <Form.Input name="password" type="password" placeholder="Senha" />
+            <Form.Input
+              name="password"
+              type="password"
+              placeholder="Senha"
+              autoComplete="current-password"
+            />
             <TextSpan color="blue-400">Esqueci minha senha</TextSpan>
           </SpanContainer>
 
@@ -34,7 +44,7 @@ export default function SignIn() {
             <Text size="lgSm" $textalign="center" $lineheight="110%">
               Não tem uma conta?{' '}
               <Link href="/auth/registrar">
-                <TextSpan hoverUnderline>Registre-se</TextSpan>
+                <TextSpan $hoverUnderline>Registre-se</TextSpan>
               </Link>
             </Text>
           </SubmitButton>

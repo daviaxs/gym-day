@@ -26,13 +26,6 @@ export function useSignUpForm() {
   }, [register])
 
   const createUSer = (data: createUserData) => {
-    if (data.password !== data.verifyPassword) {
-      setError('verifyPassword', {
-        type: 'manual',
-        message: 'As senhas devem ser iguais',
-      })
-    }
-
     if (!captcha) {
       setError('captcha', {
         type: 'manual',

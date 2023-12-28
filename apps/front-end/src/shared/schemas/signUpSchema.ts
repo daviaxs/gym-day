@@ -30,5 +30,9 @@ export const signUpSchema = z
     message: 'As senhas devem ser iguais',
     path: ['verifyPassword'],
   })
+  .refine((value) => /^[A-Za-zÀ-ÖØ-öø-ÿ\s]*$/.test(value.name), {
+    message: 'O nome não pode conter números ou caracteres especiais',
+    path: ['name'],
+  })
 
 export type createUserData = z.infer<typeof signUpSchema>

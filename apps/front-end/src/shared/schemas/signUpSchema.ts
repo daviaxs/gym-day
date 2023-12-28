@@ -5,6 +5,7 @@ export const signUpSchema = z
     name: z
       .string()
       .min(3, { message: 'O nome precisa ter no mínimo 3 caracteres' })
+      .max(20, { message: 'O nome precisa ter no máximo 20 caracteres' })
       .transform((name) => {
         return name
           .trim()

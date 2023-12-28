@@ -11,9 +11,10 @@ import { SpanContainer, SubmitButton } from '../utils/form/Form.style'
 import { useSignUpForm } from '@/shared/hooks/useSignUpForm'
 import { FormProvider } from 'react-hook-form'
 import { ErroMessage } from '../utils/form/ErrorMenssage'
+import ReCAPTCHA from 'react-google-recaptcha'
 
 export default function SignUp() {
-  const { createUSer, methods } = useSignUpForm()
+  const { createUSer, methods, onCaptchaChange } = useSignUpForm()
 
   return (
     <AuthContainer>
@@ -68,6 +69,16 @@ export default function SignUp() {
                 register={methods.register('verifyPassword')}
               />
               <ErroMessage name="verifyPassword" />
+            </SpanContainer>
+
+            <SpanContainer $align="center">
+              <ReCAPTCHA
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                onChange={onCaptchaChange}
+                theme="dark"
+              />
+              <ErroMessage name="captcha" />
             </SpanContainer>
 
             <SubmitButton>

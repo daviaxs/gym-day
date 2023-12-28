@@ -25,6 +25,8 @@ export const signUpSchema = z
     verifyPassword: z
       .string()
       .min(6, 'A senha precisa de no mínimo 6 caracteres'),
+
+    captcha: z.string().optional(),
   })
   .refine((data) => data.password === data.verifyPassword, {
     message: 'As senhas devem ser iguais',

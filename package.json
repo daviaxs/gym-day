@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "cd ./apps/front-end && npm run dev"
+    "dev": "concurrently \"npm run dev --prefix ./apps/back-end\" \"npm run dev --prefix ./apps/front-end\""
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
 }

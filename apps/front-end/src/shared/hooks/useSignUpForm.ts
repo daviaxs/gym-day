@@ -3,6 +3,7 @@ import { createUserData, signUpSchema } from '../schemas/signUpSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useEffect, useState } from 'react'
 import { api } from '@/lib/axios'
+import Router from 'next/router'
 
 export function useSignUpForm() {
   const [captcha, setCaptcha] = useState<string | null>()
@@ -48,6 +49,7 @@ export function useSignUpForm() {
       .then(() => {
         setErrorMessage(null)
         setSuccessCreateUser(true)
+        window.location.href = '/auth/entrar'
       })
       .catch((error) => {
         setErrorMessage(error.response.data.message)

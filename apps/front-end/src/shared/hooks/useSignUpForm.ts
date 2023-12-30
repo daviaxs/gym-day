@@ -2,9 +2,11 @@ import { useForm } from 'react-hook-form'
 import { createUserData, signUpSchema } from '../schemas/signUpSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useEffect, useState } from 'react'
+import { api } from '@/lib/axios'
 
 export function useSignUpForm() {
   const [captcha, setCaptcha] = useState<string | null>()
+  const [errorMessage, setErrorMessage] = useState<string | null>()
 
   const methods = useForm<createUserData>({
     resolver: zodResolver(signUpSchema),
@@ -34,11 +36,25 @@ export function useSignUpForm() {
       return
     }
 
-    console.log(data)
+    const { email, name, password } = data
+
+    api
+      .post('/users', {
+        name,
+        email,
+        password,
+      })
+      .then(() => {
+        setErrorMessage(null)
+      })
+      .catch((error) => {
+        setErrorMessage(error.response.data.message)
+      })
   }
 
   return {
     onCaptchaChange,
+    errorMessage,
     createUSer,
     methods,
   }

@@ -14,7 +14,7 @@ import { ErroMessage } from '../utils/form/ErrorMenssage'
 import ReCAPTCHA from 'react-google-recaptcha'
 
 export default function SignUp() {
-  const { createUSer, methods, onCaptchaChange } = useSignUpForm()
+  const { createUSer, methods, onCaptchaChange, errorMessage } = useSignUpForm()
 
   return (
     <AuthContainer>
@@ -80,6 +80,12 @@ export default function SignUp() {
               />
               <ErroMessage name="captcha" />
             </SpanContainer>
+
+            {errorMessage && (
+              <Text size="md" color="red-400">
+                {errorMessage}
+              </Text>
+            )}
 
             <SubmitButton>
               <Text size="lgSm" $textalign="center" $lineheight="110%">

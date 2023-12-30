@@ -17,6 +17,8 @@ export const FormContainerStyle = styled.main`
 
   min-width: 50%;
   height: 100%;
+
+  overflow-y: auto;
 `
 
 export const FormContentStyle = styled.form`

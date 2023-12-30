@@ -25,7 +25,7 @@ export default function SignIn() {
       </Welcome.Container>
 
       <FormProvider {...methods}>
-        <Form.Container title="Criar conta">
+        <Form.Container title="Entrar">
           <Form.Content onSubmit={methods.handleSubmit(signIn)}>
             <SpanContainer>
               <Form.Input

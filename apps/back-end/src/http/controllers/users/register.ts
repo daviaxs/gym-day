@@ -1,4 +1,3 @@
-import { UserAlreadyEmailExistError } from '@/use-cases/errors/user-already-email-exist-error'
 import { makeRegisterUseCase } from '@/use-cases/factories/make-register-use-case'
 import { FastifyReply, FastifyRequest } from 'fastify'
 import { ZodError, z } from 'zod'
@@ -42,11 +41,8 @@ export async function register(req: FastifyRequest, reply: FastifyReply) {
       return reply.status(400).send({ message })
     }
 
-    if (e instanceof UserAlreadyEmailExistError) {
-      return reply.status(400).send({ message: 'E-mail já cadastrado' })
-    }
-
-    return reply.status(400).send({ message: e })
+    const error = e as Error
+    return reply.status(500).send({ message: error.message })
   }
 
   return reply.status(201).send()

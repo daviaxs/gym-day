@@ -7,6 +7,7 @@ import { api } from '@/lib/axios'
 export function useSignUpForm() {
   const [captcha, setCaptcha] = useState<string | null>()
   const [errorMessage, setErrorMessage] = useState<string | null>()
+  const [successCreateUser, setSuccessCreateUser] = useState(false)
 
   const methods = useForm<createUserData>({
     resolver: zodResolver(signUpSchema),
@@ -46,6 +47,7 @@ export function useSignUpForm() {
       })
       .then(() => {
         setErrorMessage(null)
+        setSuccessCreateUser(true)
       })
       .catch((error) => {
         setErrorMessage(error.response.data.message)
@@ -53,6 +55,7 @@ export function useSignUpForm() {
   }
 
   return {
+    successCreateUser,
     onCaptchaChange,
     errorMessage,
     createUSer,

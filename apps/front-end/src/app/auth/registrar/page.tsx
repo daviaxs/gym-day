@@ -12,9 +12,16 @@ import { useSignUpForm } from '@/shared/hooks/useSignUpForm'
 import { FormProvider } from 'react-hook-form'
 import { ErroMessage } from '../utils/form/ErrorMenssage'
 import ReCAPTCHA from 'react-google-recaptcha'
+import { Check } from 'lucide-react'
 
 export default function SignUp() {
-  const { createUSer, methods, onCaptchaChange, errorMessage } = useSignUpForm()
+  const {
+    createUSer,
+    methods,
+    onCaptchaChange,
+    errorMessage,
+    successCreateUser,
+  } = useSignUpForm()
 
   return (
     <AuthContainer>
@@ -97,11 +104,14 @@ export default function SignUp() {
               <Button
                 type="submit"
                 size="full"
+                color={successCreateUser ? 'green' : 'blue'}
                 disabled={
-                  !methods.formState.isValid || methods.formState.isSubmitting
+                  !methods.formState.isValid ||
+                  methods.formState.isSubmitting ||
+                  successCreateUser
                 }
               >
-                Criar conta
+                {successCreateUser ? <Check /> : 'Criar conta'}
               </Button>
             </SubmitButton>
           </Form.Content>

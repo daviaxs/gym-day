@@ -56,7 +56,7 @@ export async function authenticate(req: FastifyRequest, reply: FastifyReply) {
       })
   } catch (e) {
     if (e instanceof InvalidCredentialsError) {
-      return reply.status(401).send({ message: 'Credenciais inválidas' })
+      return reply.status(401).send({ message: 'Email ou senha inválidos' })
     }
 
     throw e

@@ -14,7 +14,7 @@ import { useSignInForm } from '@/shared/hooks/useSignInForm'
 import { ErroMessage } from '../utils/form/ErrorMenssage'
 
 export default function SignIn() {
-  const { methods, signIn } = useSignInForm()
+  const { methods, signIn, errorMessage } = useSignInForm()
 
   return (
     <AuthContainer>
@@ -47,6 +47,12 @@ export default function SignIn() {
               <ErroMessage name="password" />
               <TextSpan color="blue-400">Esqueci minha senha</TextSpan>
             </SpanContainer>
+
+            {errorMessage && (
+              <Text size="md" color="red-400">
+                {errorMessage}
+              </Text>
+            )}
 
             <SubmitButton>
               <Button

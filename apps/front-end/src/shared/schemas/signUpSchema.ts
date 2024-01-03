@@ -5,13 +5,11 @@ export const signUpSchema = z
   .object({
     name: rules.nameValidation,
 
-    email: z.string().email('E-mail inválido'),
+    email: rules.emailValidation,
 
-    password: z.string().min(6, 'A senha precisa de no mínimo 6 caracteres'),
+    password: rules.passwordValidation,
 
-    verifyPassword: z
-      .string()
-      .min(6, 'A senha precisa de no mínimo 6 caracteres'),
+    verifyPassword: rules.passwordValidation,
 
     captcha: z.string().optional(),
   })

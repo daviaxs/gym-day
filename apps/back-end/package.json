@@ -28,7 +28,7 @@
     "@prisma/client": "5.7.1",
     "bcryptjs": "2.4.3",
     "fastify": "4.25.2",
-    "packages-gym-day-rules": "1.0.0",
+    "packages-gym-day-rules": "1.0.1",
     "zod": "3.22.4"
   }
 }

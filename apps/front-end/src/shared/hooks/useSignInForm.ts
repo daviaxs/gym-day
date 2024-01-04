@@ -32,8 +32,6 @@ export function useSignInForm() {
       .catch((e) => {
         setErrorMessage(e.response.data.message)
       })
-
-    console.log(data)
   }
 
   return {

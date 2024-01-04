@@ -1,3 +1,4 @@
+import { env } from '@/env'
 import { FastifyReply, FastifyRequest } from 'fastify'
 
 export async function refresh(req: FastifyRequest, reply: FastifyReply) {
@@ -33,7 +34,7 @@ export async function refresh(req: FastifyRequest, reply: FastifyReply) {
       path: '/',
       httpOnly: true,
       sameSite: true,
-      secure: true,
+      secure: env.NODE_ENV === 'production',
     })
     .status(200)
     .send({

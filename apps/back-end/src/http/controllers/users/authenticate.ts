@@ -1,3 +1,4 @@
+import { env } from '@/env'
 import { InvalidCredentialsError } from '@/use-cases/errors/invalid-credentials-error'
 import { makeAuthenticateUseCase } from '@/use-cases/factories/make-authenticate-use-case'
 import { FastifyReply, FastifyRequest } from 'fastify'
@@ -48,7 +49,7 @@ export async function authenticate(req: FastifyRequest, reply: FastifyReply) {
         path: '/',
         httpOnly: true,
         sameSite: true,
-        secure: true,
+        secure: env.NODE_ENV === 'production',
       })
       .status(200)
       .send({

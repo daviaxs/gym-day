@@ -4,6 +4,7 @@ import StyledComponentsRegistry from '@/app/lib/registry'
 import { useVerifyToken } from '@/shared/hooks/useVerifyToken'
 import { GlobalStyle } from '@/shared/styles/global'
 import { roboto } from '@/shared/styles/theme/fonts'
+import { LoadingPage } from './utils/LoadingPage'
 
 export default function RootLayout({
   children,
@@ -22,7 +23,7 @@ export default function RootLayout({
       <body className={roboto.className}>
         <StyledComponentsRegistry>
           <GlobalStyle />
-          {success ? children : <p>Verificando usuário</p>}
+          {success ? children : <LoadingPage />}
         </StyledComponentsRegistry>
       </body>
     </html>

@@ -81,6 +81,7 @@ export const ButtonStyle = styled.button<ButtonStyleProps>`
   }};
 
   width: ${({ size }) => (size === 'full' ? '100%' : 'auto')};
+  height: ${({ size }) => (size === 'full' ? '4rem' : 'auto')};
   padding: ${({ size }) =>
     size === 'large' || size === 'full' ? '1rem 3rem' : '0.625rem'};
 

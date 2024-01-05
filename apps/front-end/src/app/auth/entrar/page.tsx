@@ -65,6 +65,7 @@ export default function SignIn() {
                 disabled={
                   !methods.formState.isValid ||
                   methods.formState.isSubmitting ||
+                  successMessage ||
                   loading
                 }
               >

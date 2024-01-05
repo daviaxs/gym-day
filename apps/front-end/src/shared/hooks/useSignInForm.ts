@@ -7,6 +7,8 @@ import { useState } from 'react'
 
 export function useSignInForm() {
   const [errorMessage, setErrorMessage] = useState<string | null>()
+  const [successMessage, setSuccessMessage] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const methods = useForm<signInUserData>({
     resolver: zodResolver(signIpSchema),
@@ -15,6 +17,7 @@ export function useSignInForm() {
 
   const signIn = (data: signInUserData) => {
     const { email, password } = data
+    setLoading(true)
 
     api
       .post('/authenticate', {
@@ -27,14 +30,20 @@ export function useSignInForm() {
           maxAge: 60 * 60 * 24 * 7, // 7 days
           path: '/',
         })
+        setSuccessMessage(true)
         window.location.href = '/app/inicio'
       })
       .catch((e) => {
         setErrorMessage(e.response.data.message)
       })
+      .finally(() => {
+        setLoading(false)
+      })
   }
 
   return {
+    loading,
+    successMessage,
     errorMessage,
     signIn,
     methods,

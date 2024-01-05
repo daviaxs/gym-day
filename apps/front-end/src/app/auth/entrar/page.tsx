@@ -12,9 +12,12 @@ import Link from 'next/link'
 import { FormProvider } from 'react-hook-form'
 import { useSignInForm } from '@/shared/hooks/useSignInForm'
 import { ErroMessage } from '../utils/form/ErrorMenssage'
+import { Loading } from '../utils/loading/Loading'
+import { Check } from 'lucide-react'
 
 export default function SignIn() {
-  const { methods, signIn, errorMessage } = useSignInForm()
+  const { methods, signIn, errorMessage, successMessage, loading } =
+    useSignInForm()
 
   return (
     <AuthContainer>
@@ -58,11 +61,14 @@ export default function SignIn() {
               <Button
                 type="submit"
                 size="full"
+                color={successMessage ? 'green' : 'blue'}
                 disabled={
-                  !methods.formState.isValid || methods.formState.isSubmitting
+                  !methods.formState.isValid ||
+                  methods.formState.isSubmitting ||
+                  loading
                 }
               >
-                Entrar
+                {loading ? <Loading /> : successMessage ? <Check /> : 'Entrar'}
               </Button>
 
               <Text size="lgSm" $textalign="center" $lineheight="110%">

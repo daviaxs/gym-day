@@ -8,6 +8,7 @@ export function useSignUpForm() {
   const [captcha, setCaptcha] = useState<string | null>()
   const [errorMessage, setErrorMessage] = useState<string | null>()
   const [successCreateUser, setSuccessCreateUser] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const methods = useForm<createUserData>({
     resolver: zodResolver(signUpSchema),
@@ -37,6 +38,8 @@ export function useSignUpForm() {
       return
     }
 
+    setLoading(true)
+
     const { email, name, password } = data
 
     api
@@ -53,9 +56,13 @@ export function useSignUpForm() {
       .catch((error) => {
         setErrorMessage(error.response.data.message)
       })
+      .finally(() => {
+        setLoading(false)
+      })
   }
 
   return {
+    loading,
     successCreateUser,
     onCaptchaChange,
     errorMessage,

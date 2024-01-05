@@ -13,6 +13,7 @@ import { FormProvider } from 'react-hook-form'
 import { ErroMessage } from '../utils/form/ErrorMenssage'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { Check } from 'lucide-react'
+import { Loading } from '../utils/loading/Loading'
 
 export default function SignUp() {
   const {
@@ -21,6 +22,7 @@ export default function SignUp() {
     onCaptchaChange,
     errorMessage,
     successCreateUser,
+    loading,
   } = useSignUpForm()
 
   return (
@@ -108,10 +110,17 @@ export default function SignUp() {
                 disabled={
                   !methods.formState.isValid ||
                   methods.formState.isSubmitting ||
-                  successCreateUser
+                  successCreateUser ||
+                  loading
                 }
               >
-                {successCreateUser ? <Check /> : 'Criar conta'}
+                {loading ? (
+                  <Loading />
+                ) : successCreateUser ? (
+                  <Check />
+                ) : (
+                  'Criar conta'
+                )}
               </Button>
             </SubmitButton>
           </Form.Content>

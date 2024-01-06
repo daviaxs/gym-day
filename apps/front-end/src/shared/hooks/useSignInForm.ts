@@ -4,6 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { api } from '@/lib/axios'
 import { setCookie } from 'nookies'
 import { useState } from 'react'
+import { GYM_DAY_ACCESS_TOKEN } from '../constants/cookiesNames'
 
 export function useSignInForm() {
   const [errorMessage, setErrorMessage] = useState<string | null>()
@@ -26,7 +27,7 @@ export function useSignInForm() {
       })
       .then((response) => {
         setErrorMessage(null)
-        setCookie(undefined, 'GymDay.accessToken', response.data.token, {
+        setCookie(undefined, GYM_DAY_ACCESS_TOKEN, response.data.token, {
           maxAge: 60 * 60 * 24 * 7, // 7 days
           path: '/',
         })

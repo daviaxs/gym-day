@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { GYM_DAY_ACCESS_TOKEN } from './shared/constants/cookiesNames'
 
 export async function middleware(req: NextRequest) {
-  const token = req.cookies.get('GymDay.accessToken')?.value
+  const token = req.cookies.get(GYM_DAY_ACCESS_TOKEN)?.value
 
   const SignInURL = new URL('/auth/entrar', req.url)
   const HomePageURL = new URL('/app/inicio', req.url)

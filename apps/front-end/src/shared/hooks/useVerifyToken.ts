@@ -1,11 +1,12 @@
 import { api } from '@/lib/axios'
 import { destroyCookie, parseCookies } from 'nookies'
 import { useEffect, useState } from 'react'
+import { GYM_DAY_ACCESS_TOKEN } from '../constants/cookiesNames'
 
 export function useVerifyToken() {
   const [success, setSuccess] = useState(false)
   const cookies = parseCookies()
-  const token = cookies['GymDay.accessToken']
+  const token = cookies[GYM_DAY_ACCESS_TOKEN]
 
   useEffect(() => {
     // eslint-disable-next-line prettier/prettier
@@ -20,7 +21,7 @@ export function useVerifyToken() {
           setSuccess(true)
         })
         .catch(() => {
-          destroyCookie(null, 'GymDay.accessToken', { path: '/' })
+          destroyCookie(null, GYM_DAY_ACCESS_TOKEN, { path: '/' })
           window.location.href = '/auth/entrar'
         })
     })()

@@ -1,9 +1,14 @@
-'use client'
+import { Text } from '@/shared/components/text/Text'
+import { UserFisrtName } from './utils/UserFirstName'
+import { inter } from '@/shared/styles/theme/fonts'
+import { HomeStyle } from './Home.style'
 
-import { useGetUserValues } from '@/shared/hooks/useGetUserValues'
-
-export default function HomePage() {
-  const { userValues } = useGetUserValues()
-
-  return <div>User: {userValues?.name}</div>
+export default function Home() {
+  return (
+    <HomeStyle>
+      <Text className={`${inter.className}`} size="3xl" $weight="800">
+        Olá, <UserFisrtName />
+      </Text>
+    </HomeStyle>
+  )
 }

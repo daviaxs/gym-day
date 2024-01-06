@@ -1,7 +1,9 @@
+'use client'
+
+import { useGetUserValues } from '@/shared/hooks/useGetUserValues'
+
 export default function HomePage() {
-  return (
-    <div>
-      <h1>Home Page</h1>
-    </div>
-  )
+  const { userValues } = useGetUserValues()
+
+  return <div>User: {userValues?.name}</div>
 }

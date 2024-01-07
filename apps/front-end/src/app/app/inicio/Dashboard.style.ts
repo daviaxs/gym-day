@@ -2,7 +2,7 @@
 
 import styled from 'styled-components'
 
-export const HomeStyle = styled.main`
+export const DashboardStyle = styled.main`
   display: flex;
   align-items: start;
   justify-content: center;

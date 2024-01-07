@@ -7,10 +7,10 @@ export function FirstInterationMessage() {
   const [firstInteraction, setFirstInteraction] = useState(false)
 
   useEffect(() => {
-    const interactionCount = localStorage.getItem('interactionCount')
+    const interactionCount = localStorage.getItem('GYM_DAY_FIRST_INTERACTION')
 
     if (!interactionCount) {
-      localStorage.setItem('interactionCount', '1')
+      localStorage.setItem('GYM_DAY_FIRST_INTERACTION', '1')
       setFirstInteraction(true)
     }
   }, [])

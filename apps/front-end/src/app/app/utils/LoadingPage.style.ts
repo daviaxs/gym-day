@@ -1,3 +1,4 @@
+import { themeColors } from '@/shared/styles/theme/palette'
 import styled from 'styled-components'
 
 export const LoadingPageStyle = styled.main`
@@ -25,7 +26,7 @@ export const LoadingPageStyle = styled.main`
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: #fff;
+    background: ${themeColors['blue-200']};
     margin: -4px 0 0 -4px;
   }
   .lds-roller div:nth-child(1) {

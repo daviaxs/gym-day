@@ -80,12 +80,3 @@ export const SubmitButton = styled.div`
 
   width: 100%;
 `
-export const SpanContainer = styled.span<{
-  $align?: 'center' | 'start' | 'end'
-}>`
-  display: flex;
-  align-items: ${({ $align }) => $align || 'start'};
-  flex-direction: column;
-  gap: 0.6rem;
-  width: 100%;
-`

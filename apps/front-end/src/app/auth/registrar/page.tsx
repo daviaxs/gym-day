@@ -7,13 +7,14 @@ import { Form } from '../utils/form'
 import { Button } from '@/shared/components/button/Button'
 import { Text } from '@/shared/components/text/Text'
 import { TextSpan } from '@/shared/components/text/TextSpan'
-import { SpanContainer, SubmitButton } from '../utils/form/Form.style'
+import { SubmitButton } from '../utils/form/Form.style'
 import { useSignUpForm } from '@/shared/hooks/useSignUpForm'
 import { FormProvider } from 'react-hook-form'
 import { ErroMessage } from '../utils/form/ErrorMenssage'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { Check } from 'lucide-react'
 import { Loading } from '../utils/loading/Loading'
+import { SpanContainer } from '@/shared/components/spanContainer/SpanContainer.style'
 
 export default function SignUp() {
   const {

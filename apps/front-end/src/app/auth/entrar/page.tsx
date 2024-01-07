@@ -5,7 +5,7 @@ import { AuthContainer } from '../AuthPage.style'
 import { Welcome } from '../utils/welcome'
 import { Form } from '../utils/form'
 import { Button } from '@/shared/components/button/Button'
-import { SpanContainer, SubmitButton } from '../utils/form/Form.style'
+import { SubmitButton } from '../utils/form/Form.style'
 import { Text } from '@/shared/components/text/Text'
 import { TextSpan } from '@/shared/components/text/TextSpan'
 import Link from 'next/link'
@@ -14,6 +14,7 @@ import { useSignInForm } from '@/shared/hooks/useSignInForm'
 import { ErroMessage } from '../utils/form/ErrorMenssage'
 import { Loading } from '../utils/loading/Loading'
 import { Check } from 'lucide-react'
+import { SpanContainer } from '@/shared/components/spanContainer/SpanContainer.style'
 
 export default function SignIn() {
   const { methods, signIn, errorMessage, successMessage, loading } =

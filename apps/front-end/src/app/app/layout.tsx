@@ -4,7 +4,7 @@ import StyledComponentsRegistry from '@/app/lib/registry'
 import { useVerifyToken } from '@/shared/hooks/useVerifyToken'
 import { GlobalStyle } from '@/shared/styles/global'
 import { roboto } from '@/shared/styles/theme/fonts'
-import { LoadingPage } from './utils/LoadingPage'
+import { LoadingPage } from './utils/loadingPage/LoadingPage'
 
 export default function RootLayout({
   children,

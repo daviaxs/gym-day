@@ -11,4 +11,11 @@ export const DashboardStyle = styled.main`
   height: 100vh;
 
   padding: 3.75rem;
+
+  .UserName {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 1rem;
+  }
 `

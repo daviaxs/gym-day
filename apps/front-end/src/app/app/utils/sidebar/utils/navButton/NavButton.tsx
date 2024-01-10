@@ -2,6 +2,9 @@ import Link from 'next/link'
 import { NavButtonStyle } from './NavButton.style'
 import { ReactNode } from 'react'
 import { Icon, IconProps } from './Icon'
+import { Text } from '@/shared/components/text/Text'
+import { inter } from '@/shared/styles/theme/fonts'
+import { usePathname } from 'next/navigation'
 
 interface NavButtonProps {
   to: string
@@ -10,11 +13,22 @@ interface NavButtonProps {
 }
 
 export function NavButton({ to, children, iconName }: NavButtonProps) {
+  const pathname = usePathname()
+  const isActive = pathname.startsWith(`/app${to}`)
+
   return (
-    <Link href={to}>
-      <NavButtonStyle>
+    <Link href={`/app${to}`} style={{ width: '100%' }}>
+      <NavButtonStyle $isActive={isActive}>
         <Icon name={iconName} />
-        {children}
+
+        <Text
+          className={inter.className}
+          size="lgSm"
+          color="grey-50"
+          $weight="700"
+        >
+          {children}
+        </Text>
       </NavButtonStyle>
     </Link>
   )

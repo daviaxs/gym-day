@@ -1,15 +1,17 @@
+import { Apple, HandStrong2, Home, Shirt } from '@/shared/assets/icons'
+
 export type IconProps = 'home' | 'exercises' | 'food' | 'store'
 
 export function Icon({ name }: { name: IconProps }) {
   switch (name) {
     case 'home':
-      return <></>
+      return <Home />
     case 'exercises':
-      return <></>
+      return <HandStrong2 />
     case 'food':
-      return <></>
+      return <Apple />
     case 'store':
-      return <></>
+      return <Shirt />
     default:
       return null
   }

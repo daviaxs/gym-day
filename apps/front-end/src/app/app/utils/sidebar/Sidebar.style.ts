@@ -11,7 +11,7 @@ export const SidebarContainer = styled.aside`
   gap: 2rem;
 
   height: 100vh;
-  width: 15rem;
+  width: 18rem;
 
   border-right: 1px solid #333b5c70;
   background: linear-gradient(220deg, #353a69 -9.86%, #03000c 90.92%);
@@ -32,6 +32,15 @@ export const SidebarHeaderStyle = styled.div`
   }
 `
 
-export const SidebarContentStyle = styled.nav``
+export const SidebarContentStyle = styled.nav`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 100%;
+  padding: 0 1rem;
+  gap: 0.5rem;
+`
 
 export const SidebarFooterStyle = styled.div``

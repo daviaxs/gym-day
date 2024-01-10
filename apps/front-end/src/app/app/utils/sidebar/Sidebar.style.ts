@@ -16,8 +16,8 @@ export const SidebarContainer = styled.aside`
   border-right: 1px solid #333b5c70;
   background: linear-gradient(220deg, #353a69 -9.86%, #03000c 90.92%);
 `
-export const SidebarHeader = styled.div``
+export const SidebarHeaderStyle = styled.div``
 
-export const SidebarContent = styled.nav``
+export const SidebarContentStyle = styled.nav``
 
-export const SidebarFooter = styled.div``
+export const SidebarFooterStyle = styled.div``

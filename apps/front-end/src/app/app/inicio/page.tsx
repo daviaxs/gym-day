@@ -5,6 +5,7 @@ import { DashboardStyle } from './Dashboard.style'
 import { SpanContainer } from '@/shared/components/spanContainer/SpanContainer.style'
 import { FirstInterationMessage } from './utils/FirstInteractionMessage'
 import { HappyFace } from '@/shared/assets/svgs'
+import { Light } from '@/shared/components/light/Light'
 
 export default function DashboardPage() {
   return (
@@ -20,6 +21,8 @@ export default function DashboardPage() {
 
         <FirstInterationMessage />
       </SpanContainer>
+
+      <Light color="blue-500" $intensity="medium" />
     </DashboardStyle>
   )
 }

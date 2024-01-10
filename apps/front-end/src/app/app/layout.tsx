@@ -5,6 +5,8 @@ import { useVerifyToken } from '@/shared/hooks/useVerifyToken'
 import { GlobalStyle } from '@/shared/styles/global'
 import { roboto } from '@/shared/styles/theme/fonts'
 import { LoadingPage } from './utils/loadingPage/LoadingPage'
+import { Sidebar } from './utils/sidebar/Sidebar'
+import { ApplicationLayout } from './ApplicationLayout.style'
 
 export default function RootLayout({
   children,
@@ -23,7 +25,14 @@ export default function RootLayout({
       <body className={roboto.className}>
         <StyledComponentsRegistry>
           <GlobalStyle />
-          {success ? children : <LoadingPage />}
+          {success ? (
+            <ApplicationLayout>
+              <Sidebar />
+              {children}
+            </ApplicationLayout>
+          ) : (
+            <LoadingPage />
+          )}
         </StyledComponentsRegistry>
       </body>
     </html>

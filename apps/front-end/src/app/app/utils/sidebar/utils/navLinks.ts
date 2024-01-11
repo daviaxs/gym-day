@@ -23,4 +23,9 @@ export const NavLinks: NavLinksProps[] = [
     icon: 'food',
     children: 'Alimentação',
   },
+  {
+    to: '/loja',
+    icon: 'store',
+    children: 'Roupas',
+  },
 ]

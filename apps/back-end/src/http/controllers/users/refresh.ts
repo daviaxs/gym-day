@@ -32,8 +32,8 @@ export async function refresh(req: FastifyRequest, reply: FastifyReply) {
   return reply
     .setCookie('refreshToken', refreshToken, {
       path: '/',
-      httpOnly: true,
       sameSite: true,
+      httpOnly: env.NODE_ENV === 'prod',
       secure: env.NODE_ENV === 'prod',
     })
     .status(200)

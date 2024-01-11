@@ -3,6 +3,6 @@ import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-user
 import { PrismaUsersRepository } from '@/repositories/prisma/prisma-users-repository'
 
 export const usersRepository =
-  env.NODE_ENV === 'production'
+  env.NODE_ENV === 'prod'
     ? new PrismaUsersRepository()
     : new InMemoryUsersRepository()

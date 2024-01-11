@@ -34,7 +34,7 @@ export async function refresh(req: FastifyRequest, reply: FastifyReply) {
       path: '/',
       httpOnly: true,
       sameSite: true,
-      secure: env.NODE_ENV === 'production',
+      secure: env.NODE_ENV === 'prod',
     })
     .status(200)
     .send({

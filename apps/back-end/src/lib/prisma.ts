@@ -8,7 +8,7 @@ declare global {
 
 let prisma: PrismaClient
 
-if (env.NODE_ENV === 'production') {
+if (env.NODE_ENV === 'prod') {
   prisma = new PrismaClient()
 } else {
   if (!global.cachedPrisma) {

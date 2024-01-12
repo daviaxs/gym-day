@@ -4,6 +4,7 @@ import { UserAvatar } from './utils/userAvatar/UserAvatar'
 import { useGetUserValues } from '@/shared/hooks/useGetUserValues'
 import { Text } from '@/shared/components/text/Text'
 import { inter } from '@/shared/styles/theme/fonts'
+import { themeColors } from '@/shared/styles/theme/palette'
 
 export function SidebarFooter() {
   const { userValues } = useGetUserValues()
@@ -20,7 +21,7 @@ export function SidebarFooter() {
         </Text>
       </div>
 
-      <MoreHorizontal />
+      <MoreHorizontal color={themeColors['blue-100']} />
     </SidebarFooterStyle>
   )
 }

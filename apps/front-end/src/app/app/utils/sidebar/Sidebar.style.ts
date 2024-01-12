@@ -1,5 +1,6 @@
 'use client'
 
+import { themeColors } from '@/shared/styles/theme/palette'
 import styled from 'styled-components'
 
 export const SidebarContainer = styled.aside`
@@ -9,6 +10,7 @@ export const SidebarContainer = styled.aside`
   align-items: center;
 
   gap: 2rem;
+  padding-bottom: 1.5rem;
 
   height: 100vh;
   width: 18rem;
@@ -37,10 +39,21 @@ export const SidebarContentStyle = styled.nav`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  flex: 1;
 
   width: 100%;
   padding: 0 1rem;
   gap: 0.5rem;
 `
 
-export const SidebarFooterStyle = styled.div``
+export const SidebarFooterStyle = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: ${themeColors['blue-dark-400']};
+  border-radius: 0.375rem;
+
+  width: 80%;
+  height: 3.125rem;
+`

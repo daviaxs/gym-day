@@ -5,12 +5,14 @@ import { api } from '@/lib/axios'
 interface User {
   name: string
   email: string
+  avatar: string
 }
 
 export function useGetUserValues() {
   const [userValues, setUserValues] = useState<User>({
     name: 'Usuário',
     email: 'emailNãoEncontrado',
+    avatar: '',
   })
 
   useEffect(() => {
@@ -26,6 +28,7 @@ export function useGetUserValues() {
         setUserValues({
           name: user.name,
           email: user.email,
+          avatar: user.avatar,
         })
       })
   }, [])

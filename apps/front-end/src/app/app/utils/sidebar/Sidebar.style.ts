@@ -56,4 +56,12 @@ export const SidebarFooterStyle = styled.div`
 
   width: 80%;
   height: 3.125rem;
+  padding: 0.6rem 0.3rem;
+
+  .userValues {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 0.6rem;
+  }
 `

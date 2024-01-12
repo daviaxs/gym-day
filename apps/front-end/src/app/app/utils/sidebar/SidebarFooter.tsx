@@ -1,5 +1,26 @@
+import { MoreHorizontal } from 'lucide-react'
 import { SidebarFooterStyle } from './Sidebar.style'
+import { UserAvatar } from './utils/userAvatar/UserAvatar'
+import { useGetUserValues } from '@/shared/hooks/useGetUserValues'
+import { Text } from '@/shared/components/text/Text'
+import { inter } from '@/shared/styles/theme/fonts'
 
 export function SidebarFooter() {
-  return <SidebarFooterStyle>User name</SidebarFooterStyle>
+  const { userValues } = useGetUserValues()
+
+  return (
+    <SidebarFooterStyle>
+      <div className="userValues">
+        <UserAvatar />
+
+        <Text className={inter.className} size="md" $weight="700">
+          {userValues.name.length > 10
+            ? `${userValues.name.substring(0, 10)}...`
+            : userValues.name}
+        </Text>
+      </div>
+
+      <MoreHorizontal />
+    </SidebarFooterStyle>
+  )
 }

@@ -1,10 +1,9 @@
-import { MoreHorizontal } from 'lucide-react'
 import { SidebarFooterStyle } from './Sidebar.style'
 import { UserAvatar } from './utils/userAvatar/UserAvatar'
 import { useGetUserValues } from '@/shared/hooks/useGetUserValues'
 import { Text } from '@/shared/components/text/Text'
 import { inter } from '@/shared/styles/theme/fonts'
-import { themeColors } from '@/shared/styles/theme/palette'
+import { SettingsMenu } from '@/shared/components/settingsMenu/SettingsMenu'
 
 export function SidebarFooter() {
   const { userValues } = useGetUserValues()
@@ -21,7 +20,7 @@ export function SidebarFooter() {
         </Text>
       </div>
 
-      <MoreHorizontal color={themeColors['blue-100']} />
+      <SettingsMenu />
     </SidebarFooterStyle>
   )
 }

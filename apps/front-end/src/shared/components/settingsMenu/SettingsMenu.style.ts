@@ -23,25 +23,34 @@ export const Button = styled(DropdownMenu.Trigger)`
 
 export const Content = styled(DropdownMenu.Content)`
   display: flex;
-  padding: 0.5rem 0.25rem;
   flex-direction: column;
   align-items: start;
+  position: relative;
+
   gap: 0.625rem;
   margin-bottom: 1rem;
+  padding: 0.5rem 0.25rem;
 
   background-color: ${themeColors['blue-dark-400']};
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   border-radius: ${themeSizes.sm}rem;
-  position: relative;
 `
 
 export const Item = styled(DropdownMenu.Item)`
+  display: flex;
+  align-items: center;
+  justify-content: start;
+
   background-color: ${themeColors['blue-dark-300']}30;
   border-radius: ${themeSizes.sm}rem;
 
+  gap: 1rem;
   width: 100%;
   outline: none;
   padding: ${themeSizes.md}rem;
+
   cursor: pointer;
+  z-index: 1;
 
   &:hover {
     background-color: ${themeColors['blue-dark-300']}70;
@@ -60,7 +69,6 @@ export const Arrow = styled.div`
 
   bottom: -0.2rem;
   left: 0.5rem;
-  z-index: -1;
 `
 
 export const Separator = styled(DropdownMenu.Separator)`

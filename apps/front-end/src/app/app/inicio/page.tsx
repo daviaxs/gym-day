@@ -22,7 +22,7 @@ export default function DashboardPage() {
         <FirstInterationMessage />
       </SpanContainer>
 
-      <Light color="blue-500" $intensity="medium" />
+      <Light color="blue-500" $intensity="low" />
     </DashboardStyle>
   )
 }

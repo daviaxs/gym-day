@@ -1,6 +1,6 @@
 import { themeColors } from '@/shared/styles/theme/palette'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
-import { MoreHorizontal } from 'lucide-react'
+import { MoreHorizontal, Unplug, UserCog } from 'lucide-react'
 import { Separator, Content, Item, Arrow, Button } from './SettingsMenu.style'
 import { Text } from '../text/Text'
 import { inter } from '@/shared/styles/theme/fonts'
@@ -30,11 +30,13 @@ export function SettingsMenu() {
           <Separator />
 
           <Item>
+            <UserCog color={themeColors['blue-dark-100']} size={25} />
             <Text className={inter.className} size="md" $weight="800">
               Editar perfil
             </Text>
           </Item>
           <Item>
+            <Unplug color={themeColors['blue-dark-100']} size={25} />
             <Text className={inter.className} size="md" $weight="800">
               Sair
             </Text>

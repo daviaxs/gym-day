@@ -34,6 +34,34 @@ export const Content = styled(DropdownMenu.Content)`
   background-color: ${themeColors['blue-dark-400']};
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   border-radius: ${themeSizes.sm}rem;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      top: 1rem;
+    }
+    100% {
+      opacity: 1;
+      top: 0;
+    }
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  &[data-state='open'] {
+    animation: fadeIn 0.2s ease-in-out;
+  }
+
+  &[data-state='closed'] {
+    animation: fadeOut 0.2s ease-in-out;
+  }
 `
 
 export const Item = styled(DropdownMenu.Item)`

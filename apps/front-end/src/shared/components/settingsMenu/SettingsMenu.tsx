@@ -4,6 +4,7 @@ import { MoreHorizontal, Unplug, UserCog } from 'lucide-react'
 import { Separator, Content, Item, Arrow, Button } from './SettingsMenu.style'
 import { Text } from '../text/Text'
 import { inter } from '@/shared/styles/theme/fonts'
+import { handleLogout } from './funcs/handleLogout'
 
 export function SettingsMenu() {
   return (
@@ -35,7 +36,8 @@ export function SettingsMenu() {
               Editar perfil
             </Text>
           </Item>
-          <Item>
+
+          <Item onClick={handleLogout}>
             <Unplug color={themeColors['blue-dark-100']} size={25} />
             <Text className={inter.className} size="md" $weight="800">
               Sair

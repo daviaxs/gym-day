@@ -11,6 +11,7 @@ interface TextProps {
   $weight?: '400' | '500' | '700' | '800' | '900'
   $textalign?: 'center' | 'left' | 'right'
   $lineheight?: string
+  $whiteSpace?: 'normal' | 'nowrap'
 }
 
 export const Text = styled.p<TextProps>`
@@ -20,4 +21,5 @@ export const Text = styled.p<TextProps>`
   font-weight: ${({ $weight }) => $weight};
   line-height: ${({ $lineheight }) => $lineheight || '90%'};
   text-align: ${({ $textalign }) => $textalign};
+  white-space: ${({ $whiteSpace }) => $whiteSpace || 'normal'};
 `

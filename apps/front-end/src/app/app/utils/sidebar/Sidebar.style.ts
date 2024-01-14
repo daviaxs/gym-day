@@ -64,4 +64,22 @@ export const SidebarFooterStyle = styled.div`
     justify-content: start;
     gap: 0.6rem;
   }
+
+  .userName {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    overflow-x: hidden;
+    width: 90px;
+    height: 20px;
+    position: relative;
+
+    .shadow {
+      position: absolute;
+      box-shadow: -42px 0px 22.7px -26px ${themeColors['blue-dark-400']} inset;
+
+      width: 90px;
+      height: 20px;
+    }
+  }
 `

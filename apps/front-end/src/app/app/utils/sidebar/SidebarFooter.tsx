@@ -13,11 +13,18 @@ export function SidebarFooter() {
       <div className="userValues">
         <UserAvatar />
 
-        <Text className={inter.className} size="md" $weight="700">
-          {userValues.name.length > 10
-            ? `${userValues.name.substring(0, 10)}...`
-            : userValues.name}
-        </Text>
+        <div className="userName">
+          <Text
+            className={inter.className}
+            size="md"
+            $weight="700"
+            $whiteSpace="nowrap"
+          >
+            {userValues.name}
+          </Text>
+
+          <span className="shadow" />
+        </div>
       </div>
 
       <SettingsMenu />

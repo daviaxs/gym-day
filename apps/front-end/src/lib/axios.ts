@@ -1,5 +1,6 @@
 import { GYM_DAY_ACCESS_TOKEN } from '@/shared/constants/cookiesNames'
 import axios from 'axios'
+import { parseCookies } from 'nookies'
 
 export const api = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
@@ -8,6 +9,13 @@ export const api = axios.create({
 
 api.interceptors.response.use(undefined, async (error) => {
   if (error.config && error.response && error.response.status === 401) {
+    const cookies = parseCookies()
+    const token = cookies[GYM_DAY_ACCESS_TOKEN]
+
+    if (!token) {
+      await api.post('/logout')
+    }
+
     if (error.config.url === '/token/refresh') {
       return Promise.reject(error)
     }

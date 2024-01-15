@@ -10,6 +10,15 @@ export const Container = styled.main`
 
   width: 100vw;
   height: 100vh;
+  gap: 2rem;
+
+  .gym-day-logo {
+    height: 3.8rem;
+  }
+
+  .alertIcon {
+    height: 15rem;
+  }
 
   .light {
     position: absolute;

@@ -9,22 +9,22 @@ interface NavLinksProps {
 
 export const NavLinks: NavLinksProps[] = [
   {
-    to: '/inicio',
+    to: '/app/inicio',
     icon: 'home',
     children: 'Inicio',
   },
   {
-    to: '/exercicios',
+    to: '/em-andamento',
     icon: 'exercises',
     children: 'Exercícios',
   },
   {
-    to: '/alimentacao',
+    to: '/em-andamento',
     icon: 'food',
     children: 'Alimentação',
   },
   {
-    to: '/loja',
+    to: '/em-andamento',
     icon: 'store',
     children: 'Roupas',
   },

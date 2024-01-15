@@ -14,10 +14,10 @@ interface NavButtonProps {
 
 export function NavButton({ to, children, iconName }: NavButtonProps) {
   const pathname = usePathname()
-  const isActive = pathname.startsWith(`/app${to}`)
+  const isActive = pathname.startsWith(to)
 
   return (
-    <Link href={`/app${to}`} style={{ width: '100%' }}>
+    <Link href={to} style={{ width: '100%' }}>
       <NavButtonStyle $isActive={isActive}>
         <Icon name={iconName} />
 

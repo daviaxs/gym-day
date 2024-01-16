@@ -1,5 +1,11 @@
 import * as Dialog from '@radix-ui/react-dialog'
-import { Content, ContentForm, Overlay, Trigger } from './ForgotPassword.style'
+import {
+  Content,
+  ContentContainer,
+  ContentForm,
+  Overlay,
+  Trigger,
+} from './ForgotPassword.style'
 import { Text } from '@/shared/components/text/Text'
 import { GymDayLogoBLueLarge } from '@/shared/assets/gym-day-logos/gym-day-logo-blue-large'
 import { Form } from '@/shared/components/form'
@@ -27,7 +33,7 @@ export function ForgotPassword() {
         <Content>
           <GymDayLogoBLueLarge />
 
-          <div className="container">
+          <ContentContainer className="contentContainer">
             <div className="contentTexts">
               <Text size="2xl" $weight="800" color="grey-50">
                 Esqueci minha senha
@@ -70,7 +76,7 @@ export function ForgotPassword() {
                 </Button>
               </ContentForm>
             </FormProvider>
-          </div>
+          </ContentContainer>
         </Content>
       </Dialog.Portal>
     </Dialog.Root>

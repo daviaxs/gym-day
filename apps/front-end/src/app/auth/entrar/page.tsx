@@ -15,6 +15,7 @@ import { ErroMessage } from '../utils/form/ErrorMenssage'
 import { Loading } from '../utils/loading/Loading'
 import { Check } from 'lucide-react'
 import { SpanContainer } from '@/shared/components/spanContainer/SpanContainer.style'
+import { ForgotPassword } from '@/shared/pages/forgot-password/ForgotPassword'
 
 export default function SignIn() {
   const { methods, signIn, errorMessage, successMessage, loading } =
@@ -49,7 +50,7 @@ export default function SignIn() {
                 register={methods.register('password')}
               />
               <ErroMessage name="password" />
-              <TextSpan color="blue-400">Esqueci minha senha</TextSpan>
+              <ForgotPassword />
             </SpanContainer>
 
             {errorMessage && (

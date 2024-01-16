@@ -92,3 +92,25 @@ export const ContentForm = styled.form`
   justify-content: center;
   gap: 1.875rem;
 `
+
+export const Close = styled(Dialog.Close)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0.5rem;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background-color: ${themeColors['grey-50']}20;
+  }
+`

@@ -1,5 +1,6 @@
 import * as Dialog from '@radix-ui/react-dialog'
 import {
+  Close,
   Content,
   ContentContainer,
   ContentForm,
@@ -14,6 +15,8 @@ import { FormProvider } from 'react-hook-form'
 import { useForgotPasswordForm } from '@/shared/hooks/useForgotPasswordForm'
 import { SpanContainer } from '@/shared/components/spanContainer/SpanContainer.style'
 import { ErroMessage } from '@/shared/components/form/ErrorMenssage'
+import { X } from 'lucide-react'
+import { themeColors } from '@/shared/styles/theme/palette'
 
 export function ForgotPassword() {
   const { methods, sendEmail, successMessage, loading } =
@@ -77,6 +80,10 @@ export function ForgotPassword() {
               </ContentForm>
             </FormProvider>
           </ContentContainer>
+
+          <Close>
+            <X size={30} color={themeColors['grey-100']} />
+          </Close>
         </Content>
       </Dialog.Portal>
     </Dialog.Root>

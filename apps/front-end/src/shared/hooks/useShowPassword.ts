@@ -1,4 +1,4 @@
-import { InputType } from '@/app/auth/utils/form/utils/InputIcons'
+import { InputType } from '../components/form/utils/InputIcons'
 import { useState } from 'react'
 
 export function useShowPassword({ type }: { type: InputType }) {

@@ -23,6 +23,12 @@ export const Trigger = styled(Dialog.Trigger)`
 `
 
 export const Content = styled(Dialog.Content)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
   width: 100vw;
   height: 100vh;
   background-color: ${themeColors['grey-900']};
@@ -31,4 +37,31 @@ export const Content = styled(Dialog.Content)`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  .gym-day-logo {
+    position: absolute;
+    top: 3rem;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.875rem;
+    max-width: 720px;
+  }
+
+  .contentTexts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9375rem;
+  }
+`
+export const ContentForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.875rem;
 `

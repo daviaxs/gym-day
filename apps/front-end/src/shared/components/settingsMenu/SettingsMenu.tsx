@@ -1,10 +1,11 @@
 import { themeColors } from '@/shared/styles/theme/palette'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
-import { MoreHorizontal, Unplug, UserCog } from 'lucide-react'
+import { MoreHorizontal, Unplug } from 'lucide-react'
 import { Separator, Content, Item, Arrow, Button } from './SettingsMenu.style'
 import { Text } from '../text/Text'
 import { inter } from '@/shared/styles/theme/fonts'
 import { handleLogout } from './funcs/handleLogout'
+import { EditProfileMenu } from '../editProfileMenu/EditProfileMenu'
 
 export function SettingsMenu() {
   return (
@@ -30,12 +31,7 @@ export function SettingsMenu() {
 
           <Separator />
 
-          <Item>
-            <UserCog color={themeColors['blue-dark-100']} size={25} />
-            <Text className={inter.className} size="md" $weight="800">
-              Editar perfil
-            </Text>
-          </Item>
+          <EditProfileMenu />
 
           <Item onClick={handleLogout}>
             <Unplug color={themeColors['blue-dark-100']} size={25} />
